@@ -15,6 +15,7 @@ computed:{
     currency(){
         
         const number=this.book.listPrice.amount
+        console.log(this.book.listPrice.currencyCode)
         const intlNumber=new Intl.NumberFormat(`${this.book.listPrice.currencyCode}`, { style: 'currency', currency: `${this.book.listPrice.currencyCode}` }).format(number)
         return intlNumber
     }

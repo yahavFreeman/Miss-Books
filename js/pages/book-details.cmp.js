@@ -57,8 +57,12 @@ export default{
                 </div>
                 
                 </div>
-                <div>
+            <div>
             <img class="details-img" v-bind:src=book.thumbnail>
+                    <div class="link-container">
+                        <router-link :to="nextBook">Next book</router-link>    
+                        <router-link :to="previousBook">Previous book</router-link>    
+                    </div>
             </div>
         </div>
 
@@ -76,22 +80,19 @@ data(){
             reviewDate:'',
             review:'',
         },
-        isReviews:false
+        isReviews:false,
+        nextBook:null,
+        previousBook:null
     }
 },
-mounted(){
-// var elName=this.$refs.theName
-// elName.focus()
-},
+
 created(){
     const {bookId}=this.$route.params
     console.log(bookId);
     bookService.bookById(bookId).then(book=>{this.book=book
-        console.log(this.book);
         if(this.book.reviews){
             this.isReviews=true
-        }
-        
+        }   
     })
 },
 methods:{
@@ -207,6 +208,17 @@ computed:{
         }
     }
    
+},
+watch:{
+    "$route.params.bookId": {
+        handler(){
+            const {bookId}=this.$route.params
+            bookService.bookById(bookId).then(book=>this.book=book);
+            bookService.nextBookById(bookId).then(nextBook=>this.nextBook=nextBook)
+            bookService.previousBookById(bookId).then(previousBook=>this.previousBook=previousBook)
+        },
+        immediate:true
+    }
 },
 components:{
     bookService,
