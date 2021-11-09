@@ -1,0 +1,95 @@
+.book-list{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.book-preview-container{
+    border: 2px solid black;
+    text-align: center;
+    background-color: lightcoral;
+}
+.reviews{
+    border: 2px solid black;
+    text-align: left;
+    background-color: lightcoral;
+}
+header{
+    background-color: lightcyan;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rd{
+    color: red;
+}
+.grn{
+    color: green;
+}
+
+body{
+    position: relative;
+    margin: 0;
+}
+
+.details{
+padding:20px;
+    background-color: rgb(238, 82, 113);
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.reviews-and-info{
+    flex-basis: 50%;
+}
+
+.clse-btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.clse-btn{
+    border-radius: 10px;
+    background-color: lavender;
+}
+
+.details-img{
+    padding: 20px;
+}
+
+.user-msg {
+    position: fixed;
+    top: 20px;
+    right: 0;
+    padding: 10px;
+}
+
+.router-link-exact-active {
+    color: blueviolet
+}
+
+.active-link {
+    color: peru;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to
+/* .fade-leave-active below version 2.1.8 */
+
+    {
+    opacity: 0;
+}
+
+.success {
+    background-color: rgb(27, 180, 27);
+}
+
+.error {
+    background-color: red;
+}
